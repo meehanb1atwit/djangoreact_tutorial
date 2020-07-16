@@ -25,7 +25,7 @@ class App extends Component {
           <Fragment>
             <Header />
             <Alerts />
-            <div class="container">
+            <div className="container">
               <Dashboard />
             </div>
           </Fragment>
