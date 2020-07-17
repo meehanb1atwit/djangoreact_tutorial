@@ -21,14 +21,29 @@ export class Alerts extends Component {
       if (error.msg.message) {
         alert.error(`Message: ${error.msg.message.join()}`);
       }
+      if (error.msg.username) {
+        alert.error(`Userame: ${error.msg.username.join()}`);
+      }
+      if (error.msg.password) {
+        alert.error(`Password: ${error.msg.password.join()}`);
+      }
+      if (error.msg.non_field_errors) {
+        alert.error(`Login Failure: ${error.msg.non_field_errors.join()}`);
+      }
     }
 
-    if (message !== prevProps.essage) {
+    if (message !== prevProps.message) {
       if (message.deleteLead) {
         alert.success(message.deleteLead);
       }
       if (message.addLead) {
         alert.success(message.addLead);
+      }
+      if (message.passwordMismatch) {
+        alert.error(message.passwordMismatch);
+      }
+      if (message.newUser) {
+        alert.success(message.newUser);
       }
     }
   }
